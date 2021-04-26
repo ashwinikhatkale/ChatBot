@@ -264,6 +264,7 @@ D:\Test Projects\ChatBot\ChatBot\bin\ChatBot.Business.Services.pdb
 D:\Test Projects\ChatBot\ChatBot\bin\ChatBot.Business.Services.dll.config
 D:\Test Projects\ChatBot\ChatBot\bin\ChatBot.Data.pdb
 D:\Test Projects\ChatBot\ChatBot\bin\ChatBot.Data.dll.config
+F:\ChatBot\ChatBot\bin\roslyn\.gitignore
 F:\ChatBot\ChatBot\bin\roslyn\csc.exe
 F:\ChatBot\ChatBot\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 F:\ChatBot\ChatBot\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll

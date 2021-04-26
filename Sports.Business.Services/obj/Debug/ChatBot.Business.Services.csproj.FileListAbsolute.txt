@@ -42,6 +42,7 @@ D:\Test Projects\ChatBot\Sports.Business.Services\bin\Debug\ChatBot.Data.pdb
 D:\Test Projects\ChatBot\Sports.Business.Services\bin\Debug\ChatBot.Data.dll.config
 D:\Test Projects\ChatBot\Sports.Business.Services\obj\Debug\ChatBot.Business.Services.dll
 D:\Test Projects\ChatBot\Sports.Business.Services\obj\Debug\ChatBot.Business.Services.pdb
+F:\ChatBot\Sports.Business.Services\bin\Debug\roslyn\.gitignore
 F:\ChatBot\Sports.Business.Services\bin\Debug\roslyn\csc.exe
 F:\ChatBot\Sports.Business.Services\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 F:\ChatBot\Sports.Business.Services\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll

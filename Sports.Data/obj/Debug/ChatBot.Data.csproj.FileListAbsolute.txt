@@ -190,6 +190,7 @@ D:\Test Projects\ChatBot\Sports.Data\bin\Debug\ChatBot.Data.pdb
 D:\Test Projects\ChatBot\Sports.Data\obj\Debug\ChatBot.Data.dll
 D:\Test Projects\ChatBot\Sports.Data\obj\Debug\ChatBot.Data.pdb
 D:\Test Projects\ChatBot\Sports.Data\obj\Debug\ChatBot.Data.csprojAssemblyReference.cache
+F:\ChatBot\Sports.Data\bin\Debug\roslyn\.gitignore
 F:\ChatBot\Sports.Data\bin\Debug\roslyn\csc.exe
 F:\ChatBot\Sports.Data\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 F:\ChatBot\Sports.Data\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -377,7 +378,6 @@ F:\ChatBot\Sports.Data\bin\Debug\ru\Microsoft.CodeAnalysis.Workspaces.resources.
 F:\ChatBot\Sports.Data\bin\Debug\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 F:\ChatBot\Sports.Data\bin\Debug\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 F:\ChatBot\Sports.Data\bin\Debug\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-F:\ChatBot\Sports.Data\obj\Debug\ChatBot.Data.csprojAssemblyReference.cache
 F:\ChatBot\Sports.Data\obj\Debug\ChatBot.Data.csproj.CoreCompileInputs.cache
 F:\ChatBot\Sports.Data\obj\Debug\ChatBot.Data.csproj.CopyComplete
 F:\ChatBot\Sports.Data\obj\Debug\ChatBot.Data.dll
