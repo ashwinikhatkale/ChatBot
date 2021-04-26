@@ -42,3 +42,47 @@ D:\Test Projects\ChatBot\Sports.Business.Services\bin\Debug\ChatBot.Data.pdb
 D:\Test Projects\ChatBot\Sports.Business.Services\bin\Debug\ChatBot.Data.dll.config
 D:\Test Projects\ChatBot\Sports.Business.Services\obj\Debug\ChatBot.Business.Services.dll
 D:\Test Projects\ChatBot\Sports.Business.Services\obj\Debug\ChatBot.Business.Services.pdb
+F:\ChatBot\Sports.Business.Services\bin\Debug\roslyn\csc.exe
+F:\ChatBot\Sports.Business.Services\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\ChatBot\Sports.Business.Services\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\ChatBot\Sports.Business.Services\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
+F:\ChatBot\Sports.Business.Services\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\ChatBot\Sports.Business.Services\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
+F:\ChatBot\Sports.Business.Services\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
+F:\ChatBot\Sports.Business.Services\bin\Debug\roslyn\System.Collections.Immutable.dll
+F:\ChatBot\Sports.Business.Services\bin\Debug\roslyn\System.Reflection.Metadata.dll
+F:\ChatBot\Sports.Business.Services\bin\Debug\roslyn\vbc.exe
+F:\ChatBot\Sports.Business.Services\bin\Debug\roslyn\VBCSCompiler.exe
+F:\ChatBot\Sports.Business.Services\bin\Debug\roslyn\VBCSCompiler.exe.config
+F:\ChatBot\Sports.Business.Services\bin\Debug\ChatBot.Business.Services.dll.config
+F:\ChatBot\Sports.Business.Services\bin\Debug\ChatBot.Business.Services.dll
+F:\ChatBot\Sports.Business.Services\bin\Debug\ChatBot.Business.Services.pdb
+F:\ChatBot\Sports.Business.Services\bin\Debug\ChatBot.Data.dll
+F:\ChatBot\Sports.Business.Services\bin\Debug\EntityFramework.dll
+F:\ChatBot\Sports.Business.Services\bin\Debug\EntityFramework.SqlServer.dll
+F:\ChatBot\Sports.Business.Services\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\ChatBot\Sports.Business.Services\bin\Debug\Ninject.dll
+F:\ChatBot\Sports.Business.Services\bin\Debug\SimpleInjector.dll
+F:\ChatBot\Sports.Business.Services\bin\Debug\SimpleInjector.Integration.Web.dll
+F:\ChatBot\Sports.Business.Services\bin\Debug\SimpleInjector.Integration.Web.Mvc.dll
+F:\ChatBot\Sports.Business.Services\bin\Debug\SimpleInjector.Packaging.dll
+F:\ChatBot\Sports.Business.Services\bin\Debug\System.Web.Helpers.dll
+F:\ChatBot\Sports.Business.Services\bin\Debug\System.Web.Mvc.dll
+F:\ChatBot\Sports.Business.Services\bin\Debug\System.Web.Razor.dll
+F:\ChatBot\Sports.Business.Services\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\ChatBot\Sports.Business.Services\bin\Debug\System.Web.WebPages.dll
+F:\ChatBot\Sports.Business.Services\bin\Debug\System.Web.WebPages.Razor.dll
+F:\ChatBot\Sports.Business.Services\bin\Debug\ChatBot.Data.pdb
+F:\ChatBot\Sports.Business.Services\bin\Debug\ChatBot.Data.dll.config
+F:\ChatBot\Sports.Business.Services\bin\Debug\EntityFramework.xml
+F:\ChatBot\Sports.Business.Services\bin\Debug\EntityFramework.SqlServer.xml
+F:\ChatBot\Sports.Business.Services\bin\Debug\Ninject.xml
+F:\ChatBot\Sports.Business.Services\bin\Debug\SimpleInjector.xml
+F:\ChatBot\Sports.Business.Services\bin\Debug\SimpleInjector.Integration.Web.xml
+F:\ChatBot\Sports.Business.Services\bin\Debug\SimpleInjector.Integration.Web.Mvc.xml
+F:\ChatBot\Sports.Business.Services\bin\Debug\SimpleInjector.Packaging.xml
+F:\ChatBot\Sports.Business.Services\obj\Debug\ChatBot.Business.Services.csprojAssemblyReference.cache
+F:\ChatBot\Sports.Business.Services\obj\Debug\ChatBot.Business.Services.csproj.CoreCompileInputs.cache
+F:\ChatBot\Sports.Business.Services\obj\Debug\ChatBot.Business.Services.csproj.CopyComplete
+F:\ChatBot\Sports.Business.Services\obj\Debug\ChatBot.Business.Services.dll
+F:\ChatBot\Sports.Business.Services\obj\Debug\ChatBot.Business.Services.pdb
