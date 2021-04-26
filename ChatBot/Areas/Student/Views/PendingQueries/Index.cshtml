@@ -1,0 +1,79 @@
+﻿@model List<ChatBot.Business.Services.Models.QuestionAnswerModel>
+@{
+    ViewBag.Title = "Student Queries";
+}
+<h1 style="text-align:center">@ViewBag.Title</h1>
+@section styles{
+    @Styles.Render("~/Content/table")
+}
+
+@using (Html.BeginForm("DownloadFile", "PendingQueries", FormMethod.Post, new { area = "Student" }))
+{
+    <input type="hidden" id="hfFileId" name="FileId" />
+    <input type="submit" id="btnDownload" value="Download" style="display:none" />
+}
+
+<fieldset>
+    <div class="row">
+        <div class="col-lg-12">
+
+            <table style="margin: 2% auto; padding: 5px; width: 100%">
+                <thead>
+                    <tr>
+                        <th>Notice Board</th>
+                        <th>Question</th>
+                        <th>Answer</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var questions in Model)
+                        {
+                            <tr data-id="@questions.Id">
+                                <td class="text-left">@questions.NoticeBoard</td>
+                                <td class="text-left">@questions.QuestionHint1</td>
+                                <td class="text-left">
+                                    @questions.Answer
+                                    @if (questions.FileId > 0)
+                                    {
+                                        <a href="javascript:;" onclick="DownloadFile(@questions.FileId)">@questions.FileName</a>
+                                    }
+                                </td>
+                                <td>
+                                    @if (questions.Answer == null || (questions.Answer != null && questions.Answer.Length == 0))
+                                    {
+                                        <div>
+                                            @Html.ActionLink("Edit", "Index", "ChatBot", new { area = "Student", id = questions.Id }, null) |
+                                            <a role="button" class="delete-questions" data-id="@questions.Id">Delete</a>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <span>&nbsp;</span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr><td colspan="7" class="text-left">No pending queries.</td></tr>
+
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</fieldset>
+
+@section scripts{
+    @Scripts.Render("~/bundles/student-questions")
+    <script type="text/javascript">
+        function DownloadFile(fileId) {
+            $("#hfFileId").val(fileId);
+            $("#btnDownload")[0].click();
+        };
+    </script>
+}

@@ -1,0 +1,47 @@
+﻿@model List<ChatBot.Business.Services.Models.NoticeModel>
+@{
+    ViewBag.Title = "Manage Notices";
+}
+
+@section styles{
+    @Styles.Render("~/Content/table")
+}
+
+<div class="chatbot">
+    <h2>@ViewBag.Title</h2>
+    <hr />
+    <div class="row">
+        <div class="col-lg-12 text-right">
+            @Html.ActionLink("Add Notice", "Add", "Notice", new { area = "Admin" }, null)
+            <table style="margin: 1% auto; width: 100%">
+                <thead>
+                    <tr style="background-color: rosybrown">
+                        <th class="text-left">Notice</th>
+                        <th class="text-left">Notice Date</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var notice in Model)
+                        {
+                            <tr data-id="@notice.Id">
+                                <td class="text-left">@notice.Name</td>
+                                <td class="text-left">@notice.NoticeDateTime.ToString("dd-MM-yyyy")</td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", "Notice", new { area = "", id = notice.Id }, null) &nbsp;|&nbsp;
+                                    <a role="button" class="delete" data-id="@notice.Id">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/notices")
+}

@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\ChatBot",
+    "\\ChatBot\\App_Start",
+    "\\ChatBot\\Controllers",
+    "\\ChatBot\\Views",
+    "\\ChatBot\\Views\\ChangePassword",
+    "\\ChatBot\\Views\\DashBoard",
+    "\\ChatBot\\Views\\Home"
+  ],
+  "SelectedNode": "\\ChatBot\\App_Start\\BundleConfig.cs",
+  "PreviewInSolutionExplorer": false
+}

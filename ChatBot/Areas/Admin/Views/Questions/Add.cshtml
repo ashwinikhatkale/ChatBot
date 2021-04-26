@@ -1,0 +1,89 @@
+﻿@model ChatBot.Business.Services.Models.QuestionAnswerModel
+@{
+    ViewBag.Title = Model.Id > 0? "Edit Question" : "Add Question";
+}
+<div class="chatbot">
+    <h1 style="text-align:center">@ViewBag.Title</h1>
+    <hr />
+    @using (Html.BeginForm("Add", "Questions", FormMethod.Post, new { area = "Admin", @class = "form-horizontal", enctype = "multipart/form-data" }))
+    {
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.NoticeBoard, new { @class = "control-label col-lg-2" })
+                    <div class="col-lg-5">
+                        @Html.DropDownListFor(m => m.NoticeBoardId, Model.NoticeBoards, new { @class = "col-lg-4 form-control" })
+                        @Html.ValidationMessageFor(m => m.NoticeBoardId)
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    @Html.Label("Question Hint 1", new { @class = "control-label col-lg-2" })
+                    <div class="col-lg-9">
+                        @Html.TextAreaFor(m => m.QuestionHint1, new { @class = "form-control col-lg-9" })
+                        @Html.ValidationMessageFor(m => m.QuestionHint1)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    @Html.Label("Question Hint 2", new { @class = "control-label col-lg-2" })
+                    <div class="col-lg-9">
+                        @Html.TextAreaFor(m => m.QuestionHint2, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.QuestionHint2)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    @Html.Label("Question Hint 3", new { @class = "control-label col-lg-2" })
+                    <div class="col-lg-9">
+                        @Html.TextAreaFor(m => m.QuestionHint3, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.QuestionHint3)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Answer, new { @class = "control-label col-lg-2" })
+                    <div class="col-lg-9">
+                        @Html.TextAreaFor(m => m.Answer, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Answer)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.File, new { @class = "control-label col-lg-2" })
+                    <div class="col-lg-8">
+                        @Html.TextBoxFor(x => x.File, new { type = "file" })
+                        @Html.ValidationMessageFor(x => x.File)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-6">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @Scripts.Render("~/bundles/add-question")
+    }
+</div>
+

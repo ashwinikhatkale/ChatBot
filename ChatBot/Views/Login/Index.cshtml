@@ -1,0 +1,49 @@
+﻿@model ChatBot.Models.LoginModel
+@{
+    ViewBag.Title = "Login";
+}
+
+@using (Html.BeginForm("Index", "Login", FormMethod.Post, new { area = "" }))
+{
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="ReturnUrl" value="@Request.QueryString["ReturnUrl"]" />
+    <div class="form-horizontal" style="width:50%;margin:auto;">
+        <h2>Login</h2>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-7 text-left">
+                @Html.TextBoxFor(model => model.UserName, new { @class = "form-control col-lg-10" })
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Password", htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-7 text-left">
+                @Html.TextBoxFor(model => model.Password, new { @class = "form-control col-lg-10", @type = "password" })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-3 col-md-3">
+                <button id="Submit" class="btn btn-primary col-lg-9"><b>Login</b></button>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-md-5">
+                <div style="padding:5px">@Html.ActionLink("Forgot Passward", "ForgotPassword", "Login", new { area = "" }, null) </div>
+                <div style="padding:5px">
+                    <a href="@Url.Content("/Register/Index")"><i class="fa fa-user-circle" aria-hidden="true"></i>Not yet Registered?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+@section scripts{
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+}

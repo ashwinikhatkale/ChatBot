@@ -1,0 +1,50 @@
+﻿@model List<ChatBot.Business.Services.Models.NoticeModel>
+@{
+    ViewBag.Title = "Notice Board";
+}
+
+@section styles{
+    @Styles.Render("~/Content/noticeboard")
+}
+<br />
+<div class="row">
+    <div class="col-lg-12">
+        <div class="form-group">
+            <label class="control-label col-lg-2" style="padding-right:0px">From Date:</label>
+            <div class="col-md-3 form-group" style="padding-left:0px">
+                <div class='input-group date datetimepicker'>
+                    <input type="text" id="FromDate" class="form-control" value="@DateTime.Now.AddDays(-30).ToString("dd-MMM-yyyy")" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+            <label class="control-label col-lg-2" style="padding-right:0px">To Date:</label>
+            <div class="col-md-3 form-group" style="padding-left:0px">
+                <div class='input-group date datetimepicker'>
+                    <input type="text" id="ToDate" class="form-control" value="@DateTime.Now.ToString("dd-MMM-yyyy")" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="form-group">
+            <div class="col-lg-12 notices">
+                @Html.Partial("_Notices", Model)
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    @Scripts.Render("~/bundles/noticeboard")
+}
+

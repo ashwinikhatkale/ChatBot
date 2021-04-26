@@ -1,0 +1,66 @@
+﻿
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+.myDiv {
+    background-image: url('images/img.jpg');
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px outset black;
+    background-color: white;
+    text-align: center;
+    height: 750px;
+}
+
+.myDiv1 {
+    background-image: url('images/img.jpg');
+    border-right: 3px solid black;
+    background-color: white;
+    text-align: center;
+    height: 741px;
+    width: 30%;
+}
+
+.vertical-menu {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+}
+
+    .vertical-menu a {
+        color: black;
+        display: block;
+        padding: 12px;
+        text-decoration: none;
+        text-align: left;
+        font-family:Georgia;
+    }
+
+        .vertical-menu a:hover {
+            background-color: #ccc;
+        }
+
+img {
+    border-radius: 10%;
+}
+
+
+.myDiv2 {
+    position: absolute;
+    top: 10px;
+    right: 155;
+    width: 55.7%;
+    height: 80px;
+    border-bottom: 3px solid black;
+}

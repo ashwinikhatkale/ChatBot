@@ -1,0 +1,67 @@
+﻿@model ChatBot.Models.ChangePasswordModel
+@{
+    ViewBag.Title = "Change Password";
+}
+
+<div class="changepass">
+    <h1 style="text-align:center">Change Password</h1>
+    <hr />
+    @using (Html.BeginForm("Index", "ChangePassword", FormMethod.Post, new { area = "", @class = "form-horizontal" }))
+    {
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    @Html.DisplayFor(m => m.Message, new { @class = "control-label" })
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label class="control-label col-lg-4">Old Password:</label>
+                    <div class="col-lg-6 text-left">
+                        @Html.TextBoxFor(m => m.OldPassword, new { @class = "form-control", @type = "password", placeholder = "**********" })
+                        @Html.ValidationMessageFor(model => model.OldPassword, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label class="control-label col-lg-4">New Password:</label>
+                    <div class="col-lg-6 text-left">
+                        @Html.TextBoxFor(m => m.NewPassword, new { @class = "form-control", @type = "password", placeholder = "**********" })
+                        @Html.ValidationMessageFor(model => model.NewPassword, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label class="control-label col-lg-4">Confirm Password:</label>
+                    <div class="col-lg-6 text-left">
+                        @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control", @type = "password", placeholder = "**********" })
+                        @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-offset-5 col-lg-4">
+                <div class="form-group text-left">
+                    <button id="Submit" type="submit" class="btn btn-primary col-lg-4"><b>Submit</b></button>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section scripts{
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+}

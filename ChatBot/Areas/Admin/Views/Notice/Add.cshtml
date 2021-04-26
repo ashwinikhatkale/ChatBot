@@ -1,0 +1,70 @@
+﻿@model ChatBot.Business.Services.Models.NoticeModel
+@{
+    ViewBag.Title = Model.Id > 0 ? "Edit Notice" : "Add Notice";
+}
+@section styles{
+    @Styles.Render("~/Content/add-notice")
+}
+<div class="chatbot">
+    <h1 style="text-align:center">@ViewBag.Title</h1>
+    <hr />
+    @using (Html.BeginForm("Add", "Notice", FormMethod.Post, new { area = "Admin", @class = "form-horizontal" }))
+    {
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Name, new { @class = "control-label col-lg-4" })
+                    <div class="col-lg-6">
+                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control col-lg-9" })
+                        @Html.ValidationMessageFor(m => m.Name)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Description, new { @class = "control-label col-lg-4" })
+                    <div class="col-lg-6">
+                        @Html.TextAreaFor(m => m.Description, new { @class = "form-control col-lg-12" })
+                        @Html.ValidationMessageFor(m => m.Description)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    @Html.Label("Notice Date", new { @class = "control-label col-lg-4" })
+                    <div class="col-lg-6">
+                        <div class='input-group col-lg-4 datetimepicker'>
+                            @Html.TextBoxFor(m => m.NoticeDateTime, new { @class = "form-control" })
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                        @Html.ValidationMessageFor(m => m.NoticeDateTime)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-6">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/add-notice")
+}
+
+
+
+

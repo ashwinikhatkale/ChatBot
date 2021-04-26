@@ -1,0 +1,28 @@
+﻿@model List<ChatBot.Business.Services.Models.NoticeModel>
+
+<table style="margin: 2% auto; width: 100%">
+    <thead>
+        <tr style="background-color: rosybrown">
+            <th class="text-left">Name</th>
+            <th class="text-left">Description</th>
+            <th class="text-left" style="min-width: 14%;">Notice Date</th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var notice in Model)
+            {
+                <tr data-id="@notice.Id">
+                    <td class="text-left">@notice.Name</td>
+                    <td class="text-left">@notice.Description</td>
+                    <td class="text-left">@notice.NoticeDateTime.ToString("dd-MMM-yyyy")</td>
+                    <td>
+                        @Html.ActionLink("Download", "Download", "NoticeBoard", new { area = "Student", noticeId= notice.Id },null)
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

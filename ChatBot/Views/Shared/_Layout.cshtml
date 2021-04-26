@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+@{ 
+    ViewBag.Title = "Chatbot System";
+}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @RenderSection("styles", required: false)
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body>
+    <div class="myDiv">
+        <div class="myDiv1 pull-left" style="padding-top: 30px;width:20%">
+            <a href="@Url.Content("/Home/Index")">
+                <img src="~/Content/images/chatbot.jpg">
+                <h1 style="color:red;"><i>Chatbot System</i></h1>
+            </a>
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                <h2 style="font-family:'Monotype Corsiva';color:blue">
+                    Welcome
+                    <b>@HttpContext.Current.User.Identity.Name</b>
+                </h2>
+                <div class="vertical-menu">
+                    @Html.ActionLink("Dashboard", "Index", "DashBoard", new { area = "" }, null)
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        @Html.ActionLink("Add Notice", "Index", "Notice", new { area = "Admin" }, null)
+                        @Html.ActionLink("Add Question", "Index", "Questions", new { area = "Admin" }, null)
+                        @Html.ActionLink("Pending Queries", "Index", "PendingQueries", new { area = "Admin" }, null)
+                    }
+                    @if (User.IsInRole("Student"))
+                    {
+                        @Html.ActionLink("Chatbot", "Index", "ChatBot", new { area = "Student" }, null)
+                        @Html.ActionLink("Notice Board", "Index", "NoticeBoard", new { area = "Student" }, null)
+                        @Html.ActionLink("Student Queries", "Index", "PendingQueries", new { area = "Student" }, null)
+                    }
+                    @Html.ActionLink("Change Password", "Index", "ChangePassword", new { area = "" }, null)
+                    @Html.ActionLink("Logout", "LogOut", "Login", new { area = "" }, null)
+                </div>
+            }
+
+        </div>
+        <div class="container body-content pull-right" style="width: 80%;">
+            @RenderBody()
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

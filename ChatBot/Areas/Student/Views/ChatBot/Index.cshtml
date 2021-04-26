@@ -1,0 +1,144 @@
+﻿@model ChatBot.Business.Services.Models.QuestionAnswerModel
+@{
+    ViewBag.Title = "Chatbot";
+}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<div class="chatbot">
+    <h1 style="text-align:center">@ViewBag.Title</h1>
+    <br />
+    <div class="container">
+        @using (Html.BeginForm("Index", "ChatBot", FormMethod.Post, new { area = "Student", @class = "form-horizontal" }))
+        {
+            @Html.HiddenFor(x => x.Id)
+            if (ViewBag.Message != null)
+            {
+                <div class="row message">
+                    <div class="col-lg-12">
+                        <div class="col-lg-12 text-center">
+                            <span> @ViewBag.Message</span><br /><br />
+                        </div>
+                    </div>
+                </div>
+            }
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.NoticeBoard, new { @class = "control-label col-lg-3" })
+                        <div class="col-lg-8">
+                            @Html.DropDownListFor(m => m.NoticeBoardId, Model.NoticeBoards, new { @class = "col-lg-6 form-control" })
+                            @Html.ValidationMessageFor(m => m.NoticeBoardId)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        @Html.Label("Query", new { @class = "control-label col-lg-3" })
+                        <div class="col-lg-8">
+                            @Html.TextAreaFor(m => m.QuestionHint1, new { @class = "form-control col-lg-9" })
+                            @Html.ValidationMessageFor(m => m.QuestionHint1)
+                            @Html.HiddenFor(m => m.Id)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row answer  @(Model.Id > 0 ? "hide" : "")">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        @Html.Label("Answer", new { @class = "control-label col-lg-3" })
+                        <div class="col-lg-8">
+                            @Html.TextAreaFor(m => m.Answer, new { @class = "form-control col-lg-9" })
+                            @Html.ValidationMessageFor(m => m.Answer)
+                            @Html.HiddenFor(m => m.Answer)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row submit-question @(Model.Id > 0 ? "" : "hide")">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-6">
+                            <button type="submit" class="btn btn-primary">Submit Question</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@section scripts{
+    
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+
+        $(function () {
+
+            $("#QuestionHint1").autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: "/ChatBot/GetQuestions",
+                        dataType: "json",
+                        data: { noticeId: $('#NoticeBoardId').val(), prefix: request.term },
+                        success: function (data) {
+                            response($.map(data, function (item) {
+                                return { label: item.Text, value: item.Value };
+                            }));
+                        }
+                    })
+                },
+                messages: {
+                    noResults: '',
+                    results: function (resultsCount) { }
+                },
+                select: function (event, ui) {
+                    event.preventDefault();
+                    $("#QuestionHint1").val(ui.item.label);
+                    $("#Id").val(ui.item.value);
+                    var questionId = $('#Id').val();
+                    $('#Answer').val('');
+                    $('.message').addClass('hide');
+                   
+                    if (questionId > 0) {
+                        $.ajax({
+                            url: '/ChatBot/GetAnswer',
+                            data: { questionId: questionId },
+                            contentType: "application/json; charset=utf-8",
+                            dataType: 'json',
+                            success: function (response) {
+                                if (response.answer != null && response.answer.length > 0) {
+                                    $('.answer').removeClass('hide');
+                                    $('#Answer').val(response.answer);
+                                    $('.submit-question').addClass('hide');
+                                    return;
+                                }
+                            }
+                        });
+                    }
+                    $('.answer').addClass('hide');
+                    $('.submit-question').removeClass('hide');
+                }
+            }).focus(function () {
+                if ($(this).val().length == 0) {
+                    $(this).autocomplete("search", "%");
+                }
+            });
+
+            $('#QuestionHint1').on('keyup', function () {
+                $('#Answer').val('');
+                $('.message').addClass('hide');
+            });
+
+            $('#QuestionHint1').on('blur', function () {
+                if ($('#Answer').val().length == 0) {
+                    $('.answer').addClass('hide');
+                    $('.submit-question').removeClass('hide');
+                }
+                $('.message').addClass('hide');
+            });
+        });
+
+    </script>
+    }
+

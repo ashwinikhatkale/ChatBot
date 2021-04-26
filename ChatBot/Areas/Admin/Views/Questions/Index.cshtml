@@ -1,0 +1,74 @@
+﻿@model List<ChatBot.Business.Services.Models.QuestionAnswerModel>
+@{
+    ViewBag.Title = "Add Questions";
+}
+<h1 style="text-align:center">@ViewBag.Title</h1>
+@section styles{
+    @Styles.Render("~/Content/table")
+}
+
+
+@using (Html.BeginForm("DownloadFile", "Questions", FormMethod.Post, new { area = "Admin" }))
+{
+    <input type="hidden" id="hfFileId" name="FileId" />
+    <input type="submit" id="btnDownload" value="Download" style="display:none" />
+}
+<fieldset>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-lg-12 text-right">
+                @Html.ActionLink("Add Questions", "Add", "Questions", new { area = "Admin", branchId = ViewBag.Questions }, null)
+            </div>
+            <div style="width:98%;height: 560px; overflow: auto; display: inline-block;">
+                <table style="margin: 2% auto; padding: 5px; width: 100%">
+                    <thead>
+                        <tr>
+                            <th>NoticeBoard</th>
+                            <th>Question <br /> Hint 1</th>
+                            <th>Question <br /> Hint 2</th>
+                            <th>Question  <br /> Hint 3</th>
+                            <th>Answer</th>
+                            <th>File</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Any())
+                        {
+                            foreach (var questions in Model)
+                            {
+                                <tr data-id="@questions.Id">
+                                    <td class="text-left">@questions.NoticeBoard</td>
+                                    <td class="text-left">@questions.QuestionHint1</td>
+                                    <td class="text-left">@questions.QuestionHint2</td>
+                                    <td class="text-left">@questions.QuestionHint3</td>
+                                    <td class="text-left">@questions.Answer</td>
+                                    <td class="text-left"><a href="javascript:;" onclick="DownloadFile(@questions.FileId)">@questions.FileName</a></td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", "Questions", new { area = "Admin", id = questions.Id }, null) |
+                                        <a role="button" class="delete-questions" data-id="@questions.Id">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr><td colspan="7" class="text-left">Records not found.</td></tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</fieldset>
+
+@section scripts{
+    @Scripts.Render("~/bundles/questions")
+    <script type="text/javascript">
+        function DownloadFile(fileId) {
+            $("#hfFileId").val(fileId);
+            $("#btnDownload")[0].click();
+        };
+    </script>
+}
