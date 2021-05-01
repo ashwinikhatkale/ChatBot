@@ -6,7 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
@@ -57,7 +56,8 @@ namespace ChatBot.Business.Services.Services
             if (notice != null)
             {
                 notice.Name = model.Name;
-
+                notice.Description = model.Description;
+                notice.NoticeDateTime = model.NoticeDateTime;
             }
 
             await _context.SaveChangesAsync();

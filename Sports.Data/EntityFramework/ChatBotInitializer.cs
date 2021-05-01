@@ -1,5 +1,4 @@
 ﻿using ChatBot.Data.Entities;
-using ChatBot.Data.EntityFramework;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -72,12 +71,8 @@ namespace ChatBot.Data.EntityFramework
                 new QuestionAnswer{ NoticeBoard=notices.FirstOrDefault(x => x.Name == "First Year Department"), QuestionHint1="Who is HOD of the Deaprtment?", QuestionHint2="Classes", QuestionHint3="Department Staff",Answer=" Prof.Gavade  R.A."},
                 new QuestionAnswer{NoticeBoard=notices.FirstOrDefault(x => x.Name == "College"), QuestionHint1="College established year.", QuestionHint2 = "When was FABTECH TECHICAL CAMPUS Solapur established?", QuestionHint3= "College Name?", Answer = "FABTECH TECHICAL CAMPUS Solapur was established in the year 2011."},
                 new QuestionAnswer{ NoticeBoard=notices.FirstOrDefault(x => x.Name == "Fees"), QuestionHint1="College ownership Type.", QuestionHint2="Type of College ownership.", QuestionHint3="Details College",Answer="Private"},
-                new QuestionAnswer{ NoticeBoard=notices.FirstOrDefault(x => x.Name == "Fees"), QuestionHint1="College ownership Type.", QuestionHint2="Type of College ownership.", QuestionHint3="Details College",Answer="Private"},
-
-
-
-
-
+                new QuestionAnswer{ NoticeBoard=notices.FirstOrDefault(x => x.Name == "College"), QuestionHint1="Campus Size " ,QuestionHint2= "What is the area of the college ?",QuestionHint3 = "How many acres is there in college " ,Answer = " 19 Acres"},
+                new QuestionAnswer{ NoticeBoard=notices.FirstOrDefault(x => x.Name == "College"), QuestionHint1="How many courses are available in this Engineering College ?", QuestionHint2= " Engineering courses list",QuestionHint3 = " Name of Departments", Answer = " 1. Computer Engineering  2.Mechanical Engineering  3.Civil Engineering  4.Electronics and Communication Engineering  5. Electrical Engineering "},
             };
             _context.QuestionAnswers.AddRange(questions);
 

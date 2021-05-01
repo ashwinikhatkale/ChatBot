@@ -2,7 +2,7 @@
 
 namespace ChatBot.Data.Entities
 {
-   public class Users : Entity
+    public class Users : Entity
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

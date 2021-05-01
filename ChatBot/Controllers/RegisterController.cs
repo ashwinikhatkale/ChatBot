@@ -1,12 +1,7 @@
-﻿using ChatBot.Models;
-using ChatBot.Business.Services.Interfaces;
+﻿using ChatBot.Business.Services.Interfaces;
 using ChatBot.Business.Services.Models;
 using ChatBot.Data.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 
@@ -35,6 +30,12 @@ namespace ChatBot.Controllers
             await _userRepository.Insert(model);
             ViewBag.Success = true;
             return View(model);
+        }
+
+        public async Task<ActionResult> IsEmailExist(string Email)
+        {
+            var isExist = await _userRepository.IsUserWithEmailIdExists(Email);
+            return Json(!isExist, JsonRequestBehavior.AllowGet);
         }
     }
 }

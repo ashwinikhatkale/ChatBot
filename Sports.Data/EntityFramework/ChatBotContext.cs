@@ -1,17 +1,11 @@
 ﻿using ChatBot.Data.Entities;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.SqlServer;
 using System.Data.Entity.Validation;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations.Schema;
-using ChatBot.Data.EntityFramework;
-using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Data.Entity.SqlServer;
 
 namespace ChatBot.Data.EntityFramework
 {

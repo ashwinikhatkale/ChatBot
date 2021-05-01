@@ -1,5 +1,5 @@
-﻿using ChatBot.Models;
-using ChatBot.Business.Services.Interfaces;
+﻿using ChatBot.Business.Services.Interfaces;
+using ChatBot.Models;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 

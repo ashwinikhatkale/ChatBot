@@ -5,7 +5,7 @@ using System.Web.Mvc;
 
 namespace ChatBot.Business.Services.Interfaces
 {
-   public interface IRoleRepository
+    public interface IRoleRepository
     {
         Task<RoleModel> GetRole(long id);
         Task<List<SelectListItem>> GetRoleSelectList(long teamId);

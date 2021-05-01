@@ -1,9 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ChatBot.Data.Entities
+﻿namespace ChatBot.Data.Entities
 {
     public class StudentQuestions :Entity
     {

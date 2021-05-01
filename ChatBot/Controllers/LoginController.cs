@@ -1,5 +1,5 @@
-﻿using ChatBot.Models;
-using ChatBot.Business.Services.Interfaces;
+﻿using ChatBot.Business.Services.Interfaces;
+using ChatBot.Models;
 using System;
 using System.Net;
 using System.Net.Mail;
@@ -82,6 +82,13 @@ namespace ChatBot.Controllers
         {
             try
             {
+                var isUserExists = await _userRepository.IsUserWithEmailIdExists(model.EmailAddress);
+
+                if (!isUserExists)
+                {
+                    ModelState.AddModelError("EmailAddress", "User with entered email address does not exists.");
+                    return View(model);
+                }
                 string validChars = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*?_-";
                 Random random = new Random();
 

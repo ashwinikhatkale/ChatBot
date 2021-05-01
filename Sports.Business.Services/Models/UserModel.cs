@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace ChatBot.Business.Services.Models
 {
@@ -28,6 +29,7 @@ namespace ChatBot.Business.Services.Models
         [Required(ErrorMessage = "Email Address is required.")]
         [MaxLength(50)]
         [RegularExpression(@"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}", ErrorMessage = "Please enter valid email address.")]
+        [Remote("IsEmailExist", "Register", ErrorMessage = "User with same email address already exists.")]
         [CustomEmailValidator]
         public string Email { get; set; }
         public string Height { get; set; }

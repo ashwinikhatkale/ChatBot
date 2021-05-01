@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ChatBot.Data.Entities
 {
-   public interface IEntity
+    public interface IEntity
     {
         long Id { get; }
 

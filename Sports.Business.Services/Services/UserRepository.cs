@@ -103,5 +103,10 @@ namespace ChatBot.Business.Services.Services
 
             return true;
         }
+
+        public async Task<bool> IsUserWithEmailIdExists(string email)
+        {
+            return await _context.Users.AnyAsync(x => x.Email.ToLower() == email.ToLower());
+        }
     }
 }

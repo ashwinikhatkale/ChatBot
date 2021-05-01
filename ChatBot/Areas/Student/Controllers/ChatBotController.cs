@@ -1,9 +1,9 @@
 ﻿using ChatBot.Business.Services.Interfaces;
 using ChatBot.Business.Services.Models;
+using ChatBot.Controllers;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using ChatBot.Controllers;
 
 namespace ChatBot.Areas.Student.Controllers
 {
