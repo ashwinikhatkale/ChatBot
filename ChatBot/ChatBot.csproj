@@ -219,6 +219,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\chatbot.js" />
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -263,6 +264,7 @@
     <Content Include="Areas\Admin\Views\PendingQueries\Index.cshtml" />
     <Content Include="Areas\Student\Views\PendingQueries\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\noticeboard.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

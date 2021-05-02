@@ -59,6 +59,12 @@ namespace ChatBot
                   "~/Scripts/bootstrap-datetimepicker.min.js",
                      "~/Scripts/jquery-3.4.1.js",
                      "~/Scripts/noticeboard.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/chatbot").Include(
+                 "~/Scripts/jquery-3.4.1.js",
+                 "~/Scripts/jquery-ui.js",
+                 "~/Scripts/chatbot.js"));
         }
     }
 }
+ 
